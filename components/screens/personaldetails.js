@@ -152,13 +152,10 @@ const styles = StyleSheet.create({
         marginBottom: 10,
         // color: 'gray',
         borderRadius: 4,
-      
         borderBottomWidth: 2.0,
-
     },
     button:{
         justifyContent: "center",
-        
         textAlign: 'center',
         borderRadius: 5,
     }
