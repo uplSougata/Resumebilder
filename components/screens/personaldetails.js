@@ -1,18 +1,35 @@
-import { View, StyleSheet, TouchableOpacity,Text,Image, TextInput, Button } from "react-native"
-import React from "react";
+import { View, StyleSheet, TouchableOpacity,Text,Image, TextInput, Button, ScrollView, ProgressBarAndroid } from "react-native"
+import React, { useState } from "react";
+import Stepper from "react-native-stepper-ui";
 
 const Presonaldetails = () => {
+
+
+    const [active, setActive] = useState(0);
     return (
-        
         <View style = {{flex:1}} >
             <View style = {styles.container1}>
-
+                <Text style = {{margin:10,fontSize: 18,
+    fontWeight: "bold"}}>Please  fill  all  the steps to  complete your resume</Text>
+               <View style = {{flexDirection:'row',justifyContent:'space-between',margin:10}}>
+               <Text>personal information</Text>
+               <Text>step 1/6</Text>
+               </View>
+               {/* <Stepper
+        active={active}
+        content={content}
+        onNext={() => setActive((p) => p + 1)}
+        onBack={() => setActive((p) => p - 1)}
+        onFinish={() => Alert.alert("Finish")}
+      /> */}
             </View>
+           
             <View style = {styles.container2}>
                 <View style = {styles.photouplodecontainer}>
+                <View style = {{backgroundColor:'#E9EFF5',width:130,height:150,justifyContent:'center',alignItems:'center'}}>
                 <Image  source={require('../../assets/persionimage.png')}
-                style={styles.imagestyle}
-/>
+                style={styles.imagestyle}/>
+                </View>
                 <TouchableOpacity>
                     <Text style={styles.buttonTextStyle}>Uploading Image </Text>
                 </TouchableOpacity>
@@ -44,8 +61,8 @@ const Presonaldetails = () => {
                     onChangeText={(email) => { }}
                 />
                 </View>
-                <View style = {{flexDirection:'row',width:'50%'}}>
-                <View style={styles.inputView}>
+                <View style = {{flexDirection:'row',justifyContent:"space-between"}}>
+                <View style={styles.inputView3}>
                 <TextInput
                     style={styles.TextInput}
                     placeholder="country"
@@ -54,7 +71,7 @@ const Presonaldetails = () => {
                     onChangeText={(email) => { }}
                 />
                 </View>
-                <View style={styles.inputView}>
+                <View style={styles.inputView3}>
                 <TextInput
                     style={styles.TextInput}
                     placeholder="pincode"
@@ -94,6 +111,7 @@ const Presonaldetails = () => {
                 <Button title="Save & next" onPress={() => { }} color='red'/>
             </View>
             </View>
+           
         </View>
     )
 }
@@ -102,26 +120,28 @@ export default Presonaldetails;
 
 const styles = StyleSheet.create({
     container1: {
-        backgroundColor: 'blue',
-       flex:1
+        backgroundColor: '#1F3040',
+       flex:1.8
     },
     container2: {
         //backgroundColor:'red',
-        flex:9,
-       alignItems: "center",
-       //justifyContent: "center",
-
+      alignItems: "center",
+       justifyContent: "center",
+       flex:9,
+       
 
     },
     photouplodecontainer:{
        // justifyContent: "center",
        // textAlign:'center',
+       
     },
     imagestyle:{
-        width: 134,
-         height: 120,
-         marginTop: 8, 
-         marginBottom: 4
+        width: 115,
+         height: 130,
+        // marginBottom: 4,
+        
+        
     },
     buttonTextStyle: {
         color: 'black',
@@ -129,7 +149,7 @@ const styles = StyleSheet.create({
         borderColor:'black',
         borderWidth:1,
         padding:10,
-        marginBottom:20
+        marginBottom:15
     },
     TextInput: {
         marginLeft: 10,
@@ -137,7 +157,7 @@ const styles = StyleSheet.create({
     inputView: {
         backgroundColor: "#D3D3D3",
         width: "90%",
-        height: 45,
+        height: 40,
         marginBottom: 10,
         // color: 'gray',
         borderRadius: 4,
@@ -148,16 +168,31 @@ const styles = StyleSheet.create({
     inputView2:{
         backgroundColor: "#D3D3D3",
         width: "90%",
-        height: '15%',
+        height: '10%',
         marginBottom: 10,
         // color: 'gray',
         borderRadius: 4,
         borderBottomWidth: 2.0,
     },
+    inputView3:{
+        backgroundColor: "#D3D3D3",
+        width: "40%",
+        height: 40,
+        marginBottom: 10,
+        marginLeft:'5%',
+        marginRight:'5%',
+        // color: 'gray',
+        borderRadius: 4,
+        borderBottomWidth: 2.0,
+    },
     button:{
-        justifyContent: "center",
-        textAlign: 'center',
+       //justifyContent: "flex-start",
+       // textAlign: 'center',
         borderRadius: 5,
+        position: 'absolute',
+        bottom:10,
+         right:18,
+
     }
 
 })
