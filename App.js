@@ -14,6 +14,7 @@ import {BackHandler } from "react-native";
 import Homescreen from './components/screens/homescreen';
 import Signinscreen from './components/screens/signinscreen';
 import Presonaldetails from './components/screens/personaldetails';
+import Educationinformation from './components/screens/educationinformation';
 const Stack = createNativeStackNavigator();
 
 const App = () => {
@@ -34,7 +35,8 @@ const App = () => {
 
   return (
     <NavigationContainer>
-    <Stack.Navigator initialRouteName="personaldetails">
+    <Stack.Navigator initialRouteName="Educationinformation">
+    <Stack.Screen name="Educationinformation" component={Educationinformation} options = {{ headerBackVisible:false,headerShown: false}}/>
     <Stack.Screen name="Personaldetails" component={Presonaldetails} options = {{ headerBackVisible:false,headerShown: false}}/>
     <Stack.Screen name="Signinscreen" component={Signinscreen} options = {{ headerBackVisible:false,headerShown: false}}/>
       <Stack.Screen name="Homescreen" component={Homescreen} options = {{ headerBackVisible:false,headerShown: false}}/>
