@@ -1,4 +1,4 @@
-import { View, StyleSheet, TouchableOpacity, Text, Image, TextInput, Button, ScrollView, ProgressBarAndroid } from "react-native"
+import { View, StyleSheet, TouchableOpacity, Text, Image, TextInput, Button, ScrollView, ProgressBarAndroid, KeyboardAvoidingView } from "react-native"
 import React, { useState } from "react";
 import Stepper from "react-native-stepper-ui";
 import { ProgressBar, Colors } from "react-native-paper";
@@ -9,8 +9,11 @@ const Presonaldetails = () => {
 
     // const [active, setActive] = useState(0);
     return (
+        <KeyboardAvoidingView
+      behavior={Platform.OS === "ios" ? "padding" : "height"}
+    >
         <ScrollView   contentContainerStyle={{
-            flex: 1,
+            //flex: 1,
             //justifyContent: 'space-between'
         }}>
             <ScrollView >
@@ -117,10 +120,10 @@ const Presonaldetails = () => {
                 <TouchableOpacity>
                         <Text style={styles.button}>Save & Next </Text>
                     </TouchableOpacity>
-
             </View>
             </ScrollView>
         </ScrollView>
+        </KeyboardAvoidingView>
 
     )
 }

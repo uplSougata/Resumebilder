@@ -3,6 +3,7 @@ import React, { useState } from "react";
 import CheckBox from '@react-native-community/checkbox';
 
 
+
 const Educationinformation = () => {
     const [isSelected, setSelection] = useState(false);
     return (
@@ -12,7 +13,7 @@ const Educationinformation = () => {
 
 
             <View style={styles.container2}>
-                <View style={{ width: "95%", height: "63%", backgroundColor: 'white', marginBottom: '45%' }}>
+                <View style={{ width: "95%", height: "63%", backgroundColor: 'white', marginBottom: '45%' ,}}>
                     <View style={{ backgroundColor: 'black', flex: 1, width: '100%' }}>
                         <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 15 }}>
                             <Text>School</Text>

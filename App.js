@@ -14,6 +14,7 @@ import {BackHandler } from "react-native";
 import Homescreen from './components/screens/homescreen';
 import Signinscreen from './components/screens/signinscreen';
 import Presonaldetails from './components/screens/personaldetails';
+
 import Educationinformation from './components/screens/educationinformation';
 const Stack = createNativeStackNavigator();
 
