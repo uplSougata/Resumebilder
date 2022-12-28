@@ -3,20 +3,19 @@ import React, { useState } from "react";
 import CheckBox from '@react-native-community/checkbox';
 import { ProgressBar, Colors } from "react-native-paper";
 
-const Educationinformation = ({navigation}) => {
+const Firstjobdetails = ({navigation}) => {
+
     const [isSelected, setSelection] = useState(false);
-    const [status, setStatus] = useState(2 / 6);
+    const [status, setStatus] = useState(4 / 6);
     const [progressColor, setProgessColor] = useState('red')
     return (
-
-
         <View style={{ flex: 1 }}>
             <ScrollView>
             <View style={styles.container1}>
                 <Text style={{margin: 10, fontSize: 18,fontWeight: "bold"}}>Please  fill  all  the steps to  complete your resume</Text>
                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', margin: 10 }}>
                     <Text>personal information</Text>
-                    <Text>step 2/6</Text>
+                    <Text>step 4/6</Text>
                 </View>
                 <View style={{ margin:10,marginBottom:30}}>
                     <ProgressBar progress={status} color={progressColor} style = {{height: 10,borderRadius:10}} />
@@ -29,7 +28,7 @@ const Educationinformation = ({navigation}) => {
                         behavior={Platform.OS === 'ios' ? 'position' : null}
                         keyboardVerticalOffset={Platform.OS === 'ios' ? 50 : 70}
                         >
-                        <View style={{ width: 358, height: 400, backgroundColor: 'white', marginTop: 15 }}>
+                        <View style={{ width: 358, height: 363, backgroundColor: 'white', marginTop: 15 }}>
                             <View style={{ backgroundColor: 'black', flex: 1, width: '100%' }}>
                                 <View style={{ flexDirection: 'row', justifyContent: 'space-between', padding: 12, }}>
                                     <Text>School</Text>
@@ -43,7 +42,7 @@ const Educationinformation = ({navigation}) => {
                                 <View style={styles.inputView}>
                                     <TextInput
                                         style={styles.TextInput}
-                                        placeholder="Course/Degree"
+                                        placeholder="Company Name"
                                         selectionColor={"black"}
                                         placeholderTextColor="#716F6E"
                                         onChangeText={(email) => { }} />
@@ -51,7 +50,7 @@ const Educationinformation = ({navigation}) => {
                                 <View style={styles.inputView}>
                                     <TextInput
                                         style={styles.TextInput}
-                                        placeholder="School Name"
+                                        placeholder="Position"
                                         selectionColor={"black"}
                                         placeholderTextColor="#716F6E"
                                         onChangeText={(email) => { }} />
@@ -59,49 +58,27 @@ const Educationinformation = ({navigation}) => {
                                 <View style={styles.inputView}>
                                     <TextInput
                                         style={styles.TextInput}
-                                        placeholder="Grade/Score"
+                                        placeholder="Start Date"
                                         selectionColor={"black"}
                                         placeholderTextColor="#716F6E"
                                         onChangeText={(email) => { }} />
                                 </View>
-                                <View style={{ flexDirection: 'row', justifyContent: "space-between" }}>
-                                    <View style={styles.inputView3}>
-                                        <TextInput
-                                            style={styles.TextInput}
-                                            placeholder="country"
-                                            selectionColor={"black"}
-                                            placeholderTextColor="#716F6E"
-                                            onChangeText={(email) => { }}
-                                        />
-                                    </View>
-                                    <View style={styles.inputView3}>
-                                        <TextInput
-                                            style={styles.TextInput}
-                                            placeholder="pincode"
-                                            selectionColor={"black"}
-                                            placeholderTextColor="#716F6E"
-                                            onChangeText={(email) => { }}
-                                        />
-                                    </View>
+                                <View style={styles.inputView}>
+                                    <TextInput
+                                        style={styles.TextInput}
+                                        placeholder="End Date"
+                                        selectionColor={"black"}
+                                        placeholderTextColor="#716F6E"
+                                        onChangeText={(email) => { }} />
                                 </View>
+                               
                                 <View style={styles.inputView2}>
                                     <TextInput
                                         style={styles.TextInput}
-                                        placeholder="Presonal info"
+                                        placeholder="Discription"
                                         selectionColor={"black"}
                                         placeholderTextColor="#716F6E"
                                         onChangeText={(email) => { }} />
-                                </View>
-                                <View style={{
-                                    flexDirection: "row", width: '94%', marginBottom: 10
-                                }} >
-                                    <CheckBox
-                                        value={isSelected}
-                                        onValueChange={setSelection}
-                                        // style={styles.checkbox}
-                                        tintColors={{ true: 'red', false: '#D3D3D3' }}
-                                    />
-                                    <Text style={{ color: 'black', marginTop: 7 }}> I currently attend here </Text>
                                 </View>
                             </View>
                             
@@ -115,15 +92,13 @@ const Educationinformation = ({navigation}) => {
                         </Text>
                     </TouchableOpacity>
 
-                    <View style={{ flexDirection: 'row',justifyContent:'space-between',marginTop:'23%',margin:'12%',marginLeft:'55%',}}>
+                    <View style={{ flexDirection: 'row',justifyContent:'space-between',marginTop:'34%',margin:'8%',marginLeft:'55%',}}>
                         <TouchableOpacity onPress={() =>
-        navigation.navigate('Personaldetails')
-      }>
+        navigation.navigate('Skillinformation')}>
                         <Text style={styles.button1}>Back</Text>
                         </TouchableOpacity>
                         <TouchableOpacity onPress={() =>
-        navigation.navigate('Skillinformation')
-      }>
+        navigation.navigate('') }>
                         <Text style={styles.button2}>Save & Next </Text>
                         </TouchableOpacity>     
                     </View>
@@ -132,9 +107,9 @@ const Educationinformation = ({navigation}) => {
         </View>
 
     )
-}
 
-export default Educationinformation;
+}
+export default Firstjobdetails;
 
 const styles = StyleSheet.create({
     container1: {
@@ -173,9 +148,7 @@ const styles = StyleSheet.create({
     inputView2: {
         backgroundColor: "#D3D3D3",
         width: "93%",
-        height: '25%',
-        marginBottom: 10,
-        // color: 'gray',
+        height: '28%',
         borderRadius: 4,
         borderBottomWidth: 2.0,
     },
